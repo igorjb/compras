@@ -23,7 +23,6 @@ public class CadastroFornecedoresBean implements Serializable {
 
 	@Inject
 	private Fornecedores fornecedores;
-
 	
 	@Inject
 	private Estados estados;
