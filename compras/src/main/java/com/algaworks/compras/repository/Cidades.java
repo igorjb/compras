@@ -5,17 +5,17 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 
 import com.algaworks.compras.model.Cidade;
 import com.algaworks.compras.model.Estado;
+import com.algaworks.compras.util.jpa.EntityManagerProducer;
 
 public class Cidades implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private EntityManagerFactory factory;
+	private EntityManagerProducer factory;
 	
 	public List<Cidade> porEstado(Estado estado) {
 		EntityManager manager = factory.createEntityManager();

@@ -23,12 +23,6 @@ public class EntityManagerProducer implements Serializable {
 	
 	@Produces
 	@RequestScoped
-	public EntityManagerFactory createEntityManagerFactory() {
-		return factory;
-	}
-	
-	@Produces
-	@RequestScoped
 	public EntityManager createEntityManager() {
 		return factory.createEntityManager();
 	}
