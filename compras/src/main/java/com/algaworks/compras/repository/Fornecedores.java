@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import com.algaworks.compras.model.Fornecedor;
-import com.algaworks.compras.util.jpa.EntityManagerProducer;
+import com.algaworks.compras.util.jpa.Transactional;
 
 public class Fornecedores implements Serializable {
 
@@ -17,15 +17,9 @@ public class Fornecedores implements Serializable {
 	@Inject
 	private EntityManager manager;
 
-	@Inject
-	private EntityManagerProducer factory;
-	
+	@Transactional
 	public void adicionar(Fornecedor fornecedor) {
-		EntityManager manager = factory.createEntityManager();
-		manager.getTransaction().begin();
 		manager.persist(fornecedor);
-		manager.getTransaction().commit();
-		manager.close();
 	}
 
 	public List<Fornecedor> todosComCidadeEstado() {
