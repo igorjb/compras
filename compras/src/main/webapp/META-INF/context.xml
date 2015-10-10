@@ -3,4 +3,8 @@
 	<Resource name="BeanManager" auth="Container"
 		type="javax.enterprise.inject.spi.BeanManager" factory="org.jboss.weld.resources.ManagerObjectFactory" />
 		
+	<Resource name="jdbc/comprasDB" auth="Container"
+		factory="org.apache.naming.factory.BeanFactory" type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		driverClass="org.postgresql.Driver" jdbcUrl="jdbc:postgresql://localhost:5432/compras"
+		user="postgres" password="postgres" minPoolSize="3" maxPoolSize="3" />
 </Context>
